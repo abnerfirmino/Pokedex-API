@@ -1,3 +1,8 @@
+# Aplicação Pokedex
+
+A Pokedex é uma Fetch API que consome dados da [Poke API](https://pokeapi.co/docs/v2). 
+Esse projeto foi desenvolvido durante o bootcamp Orange Tech da DIO.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
