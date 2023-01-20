@@ -1,0 +1,13 @@
+--- Na pasta do projeto ---
+
+$ npx create-react-app .
+
+-> Criar e configurar os arquivos .editorconfig, .prettierrc.js e .eslintrc.js
+
+$ npm install eslint-plugin-prettier@latest --save-dev
+
+$ npx eslint src/**/*.js --fix
+
+$ npx eslint src/**/*.jsx --fix
+
+$ npm i prop-types
