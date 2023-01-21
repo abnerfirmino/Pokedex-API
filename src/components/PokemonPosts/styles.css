@@ -1,5 +1,6 @@
 .pokemons {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    list-style: none;
-  }
+  display: grid;
+  grid-template-columns: 1fr;
+  list-style-type: none;
+  gap: 0.5rem;
+}

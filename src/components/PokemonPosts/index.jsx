@@ -2,25 +2,25 @@ import P from 'prop-types';
 
 import './styles.css';
 
-import { PostCard } from '../PostCard';
+import { PokemonCard } from '../PokemonCard';
 
-const PokemonPosts = ({ posts = [] }) => (
-  <div className="pokemons">
-    {posts.map((post) => (
-      <PostCard key={post.id} cover={post.cover} title={post.title} body={post.body} id={post.id} />
-    ))}
-  </div>
-);
+const PokemonPosts = ({ posts = [] }) => {
+  return (
+    <ol className="pokemons">
+      {posts.map((post) => (
+        <PokemonCard key={post.name} name={post.name} />
+      ))}
+    </ol>
+  );
+}
 
-export { PokemonPosts };
+export { PokemonPosts }
 
 PokemonPosts.propTypes = {
   posts: P.arrayOf(
     P.shape({
-      id: P.number.isRequired,
-      title: P.string.isRequired,
-      cover: P.string.isRequired,
-      body: P.string.isRequired,
+      name: P.string.isRequired,
+      url: P.string,
     }),
   ),
-};
+}

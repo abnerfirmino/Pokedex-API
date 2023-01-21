@@ -1,0 +1,25 @@
+.footer {
+  position: sticky;
+  bottom: 0;
+  margin-top: 0.7rem;
+  width: 100%;
+  z-index: -1;
+  height: 3rem;
+}
+
+.footer__content {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer__developer,
+.footer__poweredBy {
+  padding: 0.5rem 1rem;
+}
+
+.footer__content a {
+  color:#000;
+  text-decoration: none;
+}

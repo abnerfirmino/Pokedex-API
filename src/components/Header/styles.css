@@ -1,0 +1,21 @@
+.header {
+  height: 3rem;
+  margin-bottom: 0.7rem;
+}
+
+.header__content {
+  background-color: #fff;
+}
+
+.header__logo {
+  width: fit-content;
+  padding: 0.5rem;
+  margin: 0 auto;
+}
+
+.header__logo a {
+  color: #000;
+  font-size: 1.5rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
