@@ -5,7 +5,7 @@ const Header = () => {
     <header className="header">
     <section className="header__content">
         <h1 className="header__logo">
-            <a href="#">Pokedex</a>
+            <a href="#">Pokédex</a>
         </h1>
     </section>
   </header>
