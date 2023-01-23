@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+import './styles.css';
 import React, { useCallback, useEffect, useState } from 'react';
 import { loadPokemons } from '../../utils/loadPokemons';
 import { PokemonPosts } from '../../components/PokemonPosts';
