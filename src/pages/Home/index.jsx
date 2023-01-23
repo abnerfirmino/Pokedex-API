@@ -11,19 +11,19 @@ const Home = () => {
   // Estados do componente
   const [posts, setPosts] = useState([]);
   const [allPosts, setAllPosts] = useState([]);
-  const [page, setPage] = useState(0);
+  const [offset, setOffset] = useState(0);
   const [postsPerPage] = useState(10);
 
-  // Função para carregar os dados
+  // Função para tratar o carregamento dos posts
   const handleLoadPokemons = useCallback(
-    async (page, postsPerPage) => {
+    async (offset, postsPerPage) => {
       const postsArray = await loadPokemons();
 
-      setPosts(postsArray.slice(page, postsPerPage));
+      setPosts(postsArray.slice(offset, postsPerPage));
       setAllPosts(postsArray);
   }, []);
 
-  // Função do ciclo de vida do componente 'Did Mount'
+  // ciclo de vida do componente "Did Mount"
   useEffect(() => {
     handleLoadPokemons(0, postsPerPage);
   }, [handleLoadPokemons, postsPerPage]);
