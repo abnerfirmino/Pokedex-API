@@ -10,7 +10,7 @@ const loadPokemons = async () => {
 
     const results = pokemonsJson.results;
 
-    const detailsRequests = results.map((result) => fetch(result.url));
+    const detailsRequests = await results.map((result) => fetch(result.url));
 
     const [detailsResponses] = await Promise.all([detailsRequests]);
 
