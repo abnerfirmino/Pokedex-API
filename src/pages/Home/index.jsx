@@ -17,7 +17,7 @@ const Home = () => {
   // Função para tratar o carregamento dos posts
   const handleLoadPokemons = useCallback(
     async (offset, postsPerPage) => {
-      const [postsArray] = await loadPokemons();
+      const postsArray = await loadPokemons();
 
       setPosts(postsArray.slice(offset, postsPerPage));
       setAllPosts(postsArray);
