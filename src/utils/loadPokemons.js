@@ -8,7 +8,15 @@ const loadPokemons = async () => {
 
     const pokemonsJson = await pokemons.json();
 
-    return pokemonsJson.results;
+    const results = pokemonsJson.results;
+
+    const detailsRequests = results.map((result) => fetch(result.url));
+
+    const [detailsResponses] = await Promise.all([detailsRequests]);
+
+    const detailsResponsesJson = await detailsResponses.json();
+
+    return detailsResponsesJson;
   }
   catch(error) {
     console.error(error);
