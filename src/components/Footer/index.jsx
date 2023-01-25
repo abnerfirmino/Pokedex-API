@@ -7,8 +7,8 @@ const Footer = () => {
         <div className="footer__developer">
             <a href="https://github.com/abnerfirmino">By Abner Firmino</a>
         </div>
-        <div className="footer__poweredBy">
-            <a href="https://www.dio.me/">Powered by DIO</a>
+        <div className="footer__supportedBy">
+            <a href="https://www.dio.me/">Supported by DIO</a>
         </div>
     </section>
 </footer>
