@@ -8,7 +8,7 @@ const PokemonPosts = ({ posts = [] }) => {
   return (
     <ol className="pokemons">
       {posts.map((post) => (
-        <PokemonCard key={post.id} id={post.id} name={post.name} types={post.types} />
+        <PokemonCard key={post.id} id={post.id} name={post.name} types={post.types} img={post.sprites} />
       ))}
     </ol>
   );
@@ -21,7 +21,8 @@ PokemonPosts.propTypes = {
     P.shape({
       id: P.number.isRequired,
       name: P.string.isRequired,
-      types: P.array.isRequired
+      types: P.array.isRequired,
+      img: P.object,
     }),
   ),
 }

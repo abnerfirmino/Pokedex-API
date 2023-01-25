@@ -4,9 +4,11 @@ import './styles.css';
 
 const Button = ({ text, onClick, disabled = false }) => {
   return (
-    <button className="button" onClick={onClick} disabled={disabled}>
-      {text}
-    </button>
+    <div className="button-container">
+      <button className="button" onClick={onClick} disabled={disabled}>
+        {text}
+      </button>
+    </div>
   );
 };
 

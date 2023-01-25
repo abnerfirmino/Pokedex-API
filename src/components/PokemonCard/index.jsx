@@ -2,19 +2,19 @@ import P from 'prop-types';
 
 import './styles.css';
 
-const PokemonCard = ({ id, name, types }) => {
+const PokemonCard = ({ id, name, types, img }) => {
   return (
-    <li className="pokemon">
+    <li className={"pokemon " + types[0].type.name} >
       <span className="number">#0{id}</span>
       <span className="name">{name}</span>
 
       <div className="details">
         <ol className="types">
           {types.map((typeSlot) => (
-            <li key={typeSlot.slot} className='type'>{typeSlot.type.name}</li>
+            <li className={"type " + typeSlot.type.name} key={typeSlot.slot}>{typeSlot.type.name}</li>
           ))}
         </ol>
-        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg"
+        <img src={img.other.dream_world.front_default}
         alt={name} />
       </div>
     </li>
@@ -27,4 +27,5 @@ PokemonCard.propTypes = {
   id: P.number.isRequired,
   name: P.string.isRequired,
   types: P.array.isRequired,
+  img: P.object.isRequired,
 }

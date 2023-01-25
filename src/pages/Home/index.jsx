@@ -5,6 +5,7 @@ import { loadPokemons } from '../../utils/loadPokemons';
 import { PokemonPosts } from '../../components/PokemonPosts';
 import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
+import { Button } from '../../components/Button';
 
 const Home = () => {
 
@@ -12,13 +13,14 @@ const Home = () => {
   const [posts, setPosts] = useState([]);
   const [allPosts, setAllPosts] = useState([]);
   const [offset, setOffset] = useState(0);
-  const [postsPerPage] = useState(10);
+  const [postsPerPage] = useState(20);
 
   // Função para tratar o carregamento dos posts
   const handleLoadPokemons = useCallback(
     async (offset, postsPerPage) => {
       const postsArray = await loadPokemons();
 
+      console.log(postsArray);
       setPosts(postsArray.slice(offset, postsPerPage));
       setAllPosts(postsArray);
   }, []);
@@ -35,6 +37,7 @@ const Home = () => {
       <main className="main">
         <section className="content">
           <PokemonPosts posts={posts} />
+          <Button text='Load More ...' />
         </section>
       </main>
 
