@@ -12,6 +12,7 @@
   background-color: #678fee;
 }
 .electric {
+  color: #B0B0B0;
   background-color: #f7cf2e;
 }
 .ice {
@@ -88,13 +89,13 @@
 }
 
 .pokemon .details .types .type {
-  color: #fff;
+  color: 	#fff;
   font-size: 0.8rem;
   padding: 0.25rem 0.5rem;
   margin: 0.5rem 0;
   border-radius: 1rem;
   text-align: center;
-  filter:brightness(1.12);
+  filter:brightness(1.1);
 }
 
 .pokemon .details img {
