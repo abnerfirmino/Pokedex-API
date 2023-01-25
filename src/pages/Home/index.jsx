@@ -20,7 +20,6 @@ const Home = () => {
     async (offset, postsPerPage) => {
       const postsArray = await loadPokemons();
 
-      console.log(postsArray);
       setPosts(postsArray.slice(offset, postsPerPage));
       setAllPosts(postsArray);
   }, []);
@@ -39,6 +38,9 @@ const Home = () => {
     setOffset(nextPage);
   }
 
+  // lógica que desabilita o botão quando os posts acabarem
+  const noMorePosts = offset + postsPerPage >= allPosts.length;
+
   return (
     <>
       <Header />
@@ -46,7 +48,7 @@ const Home = () => {
       <main className="main">
         <section className="content">
           <PokemonPosts posts={posts} />
-          <Button text='Load More ...' onClick={handleLoadMorePosts} />
+          <Button text='Load More ...' onClick={handleLoadMorePosts} disabled={noMorePosts} />
         </section>
       </main>
 

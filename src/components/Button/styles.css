@@ -24,3 +24,8 @@
 .button-container button:active {
   transform: scale(1.1);
 }
+
+.button-container button:disabled {
+  background-color: #888;
+  cursor: not-allowed;
+}
