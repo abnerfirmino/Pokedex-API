@@ -30,6 +30,15 @@ const Home = () => {
     handleLoadPokemons(0, postsPerPage);
   }, [handleLoadPokemons, postsPerPage]);
 
+  // função para tratar a paginação
+  const handleLoadMorePosts = () => {
+    const nextPage = offset + postsPerPage;
+    const nextPosts = allPosts.slice(nextPage, postsPerPage + nextPage);
+
+    posts.push(...nextPosts);
+    setOffset(nextPage);
+  }
+
   return (
     <>
       <Header />
@@ -37,7 +46,7 @@ const Home = () => {
       <main className="main">
         <section className="content">
           <PokemonPosts posts={posts} />
-          <Button text='Load More ...' />
+          <Button text='Load More ...' onClick={handleLoadMorePosts} />
         </section>
       </main>
 
