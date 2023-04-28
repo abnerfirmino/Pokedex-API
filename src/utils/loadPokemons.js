@@ -2,7 +2,9 @@
 
 const loadPokemons = async () => {
   try {
-    const response = fetch('https://pokeapi.co/api/v2/pokemon?offset=0&limit=151');
+    const response = fetch(
+      'https://pokeapi.co/api/v2/pokemon?offset=0&limit=151',
+    );
 
     const [pokemons] = await Promise.all([response]);
 
@@ -12,14 +14,13 @@ const loadPokemons = async () => {
 
     // Promises em paralelo
     const details = await Promise.all(
-      results.map((result) => fetch(result.url).then((r) => r.json()))
+      results.map((result) => fetch(result.url).then((r) => r.json())),
     );
 
     return details;
-  }
-  catch(error) {
+  } catch (error) {
     console.error(error);
   }
-}
+};
 
-export { loadPokemons }
+export { loadPokemons };

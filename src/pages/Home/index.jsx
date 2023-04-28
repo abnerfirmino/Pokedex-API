@@ -8,7 +8,6 @@ import { Footer } from '../../components/Footer';
 import { Button } from '../../components/Button';
 
 const Home = () => {
-
   // Estados do componente
   const [posts, setPosts] = useState([]);
   const [allPosts, setAllPosts] = useState([]);
@@ -16,12 +15,11 @@ const Home = () => {
   const [postsPerPage] = useState(20);
 
   // Função para tratar o carregamento dos posts
-  const handleLoadPokemons = useCallback(
-    async (offset, postsPerPage) => {
-      const postsArray = await loadPokemons();
+  const handleLoadPokemons = useCallback(async (offset, postsPerPage) => {
+    const postsArray = await loadPokemons();
 
-      setPosts(postsArray.slice(offset, postsPerPage));
-      setAllPosts(postsArray);
+    setPosts(postsArray.slice(offset, postsPerPage));
+    setAllPosts(postsArray);
   }, []);
 
   // ciclo de vida do componente "Did Mount"
@@ -36,7 +34,7 @@ const Home = () => {
 
     posts.push(...nextPosts);
     setOffset(nextPage);
-  }
+  };
 
   // lógica que desabilita o botão quando os posts acabarem
   const noMorePosts = offset + postsPerPage >= allPosts.length;
@@ -48,13 +46,17 @@ const Home = () => {
       <main className="main">
         <section className="content">
           <PokemonPosts posts={posts} />
-          <Button text='Load More ...' onClick={handleLoadMorePosts} disabled={noMorePosts} />
+          <Button
+            text="Load More ..."
+            onClick={handleLoadMorePosts}
+            disabled={noMorePosts}
+          />
         </section>
       </main>
 
       <Footer />
     </>
   );
-}
+};
 
-export { Home }
+export { Home };

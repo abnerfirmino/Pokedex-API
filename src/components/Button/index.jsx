@@ -1,4 +1,4 @@
-import P from 'prop-types';
+import PropTypes from 'prop-types';
 
 import './styles.css';
 
@@ -19,7 +19,7 @@ Button.defaultProps = {
 };
 
 Button.propTypes = {
-  text: P.string.isRequired,
-  onClick: P.func.isRequired,
-  disabled: P.bool,
+  text: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
+  disabled: PropTypes.bool,
 };
