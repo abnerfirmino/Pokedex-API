@@ -1,11 +1,16 @@
 /* eslint-disable no-unused-vars */
 import './styles.css';
 import React, { useCallback, useEffect, useState } from 'react';
-import { loadPokemons } from '../../utils/loadPokemons';
 import { PokemonPosts } from '../../components/PokemonPosts';
 import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
 import { Button } from '../../components/Button';
+
+// useLoadPokemons (Fetch -GET)
+import { useLoadPokemons } from '../../hooks/useLoadPokemons';
+
+// url global
+const url = 'https://pokeapi.co/api/v2/pokemon?offset=0&limit=151';
 
 const Home = () => {
   // Estados do componente
@@ -14,13 +19,18 @@ const Home = () => {
   const [offset, setOffset] = useState(0);
   const [postsPerPage] = useState(20);
 
-  // Função para tratar o carregamento dos posts
-  const handleLoadPokemons = useCallback(async (offset, postsPerPage) => {
-    const postsArray = await loadPokemons();
+  // carregando os dados
+  const { data } = useLoadPokemons(url);
 
-    setPosts(postsArray.slice(offset, postsPerPage));
-    setAllPosts(postsArray);
-  }, []);
+  console.log(data);
+  // Função para tratar o carregamento dos posts
+  const handleLoadPokemons = useCallback(
+    (offset, postsPerPage) => {
+      setPosts(data.slice(offset, postsPerPage));
+      setAllPosts(data);
+    },
+    [data],
+  );
 
   // ciclo de vida do componente "Did Mount"
   useEffect(() => {
