@@ -22,7 +22,6 @@ const Home = () => {
   // carregando os dados
   const { data } = useLoadPokemons(url);
 
-  console.log(data);
   // Função para tratar o carregamento dos posts
   const handleLoadPokemons = useCallback(
     (offset, postsPerPage) => {
@@ -32,7 +31,7 @@ const Home = () => {
     [data],
   );
 
-  // ciclo de vida do componente "Did Mount"
+  // faz a paginação dos posts
   useEffect(() => {
     handleLoadPokemons(0, postsPerPage);
   }, [handleLoadPokemons, postsPerPage]);
