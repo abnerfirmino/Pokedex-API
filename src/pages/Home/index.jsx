@@ -31,7 +31,7 @@ const Home = () => {
     [data],
   );
 
-  // faz a paginação dos posts
+  // use effect do componente
   useEffect(() => {
     handleLoadPokemons(0, postsPerPage);
   }, [handleLoadPokemons, postsPerPage]);
